@@ -12,6 +12,7 @@ import { Demo } from "./pages/Demo";
 import { CharacterPage } from "./pages/CharacterPage";
 import { PlanetPage } from "./pages/PlanetPage";
 import { SpaceshipPage } from "./pages/SpaceshipPage";
+import { SpeciesPage } from "./pages/SpeciesPage";
 
 export const router = createBrowserRouter(
     createRoutesFromElements(
@@ -31,6 +32,7 @@ export const router = createBrowserRouter(
         <Route path="/characters/:id" element={<CharacterPage />} />
         <Route path="/planets/:id" element={<PlanetPage />} />
         <Route path="/spaceships/:id" element={<SpaceshipPage />} />
+        <Route path="/species/:id" element={<SpeciesPage />} />
       </Route>
     )
 );

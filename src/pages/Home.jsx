@@ -58,6 +58,9 @@ export const Home = () => {
 
   return (
     <div className="container mt-5">
+      <div className="display-1 text-warning text-center">
+          Star Wars Reading
+      </div>
       <div className="d-flex row flex-nowrap overflow-x-scroll mt-5 py-4">
         {store?.characters.map((character) => (
           <CharacterCard
