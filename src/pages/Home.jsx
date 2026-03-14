@@ -13,6 +13,12 @@ export const Home = () => {
     const response = await fetch(
       "https://www.swapi.tech/api/people/?expanded=true",
     );
+
+    if (!response.ok) {
+      console.log("error: ", response.status, response.statusText);
+      return;
+    }
+
     const data = await response.json();
     console.log(data.results);
     dispatch({ type: "add_characters", payload: data.results });
@@ -23,6 +29,12 @@ export const Home = () => {
     const response = await fetch(
       "https://www.swapi.tech/api/planets/?expanded=true",
     );
+
+    if (!response.ok) {
+      console.log("error: ", response.status, response.statusText);
+      return;
+    }
+
     const data = await response.json();
     console.log(data.results);
     dispatch({ type: "add_planets", payload: data.results });
@@ -33,6 +45,12 @@ export const Home = () => {
     const response = await fetch(
       "https://www.swapi.tech/api/starships/?expanded=true",
     );
+
+    if (!response.ok) {
+      console.log("error: ", response.status, response.statusText);
+      return;
+    }
+
     const data = await response.json();
     console.log(data.results);
     dispatch({ type: "add_spaceships", payload: data.results });
@@ -43,6 +61,12 @@ export const Home = () => {
     const response = await fetch(
       "https://www.swapi.tech/api/species/?expanded=true",
     );
+
+    if (!response.ok) {
+      console.log("error: ", response.status, response.statusText);
+      return;
+    }
+
     const data = await response.json();
     console.log(data.results);
     dispatch({ type: "add_species", payload: data.results });
@@ -59,7 +83,7 @@ export const Home = () => {
   return (
     <div className="container mt-5">
       <div className="display-1 text-warning text-center">
-          Star Wars Reading
+        Star Wars Reading List
       </div>
       <div className="d-flex row flex-nowrap overflow-x-scroll mt-5 py-4">
         {store?.characters.map((character) => (
